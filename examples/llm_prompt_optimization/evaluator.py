@@ -154,7 +154,7 @@ def load_hf_dataset(config):
     dataset_name = config["dataset_name"]
     dataset_config = config.get("dataset_config", None)
     split = config.get("split", "test")
-    trust_remote_code = config.get("trust_remote_code", True)  # Default to True for convenience
+    trust_remote_code = config.get("trust_remote_code", False)  # Default to False for convenience
 
     print(f"Loading dataset: {dataset_name}")
 

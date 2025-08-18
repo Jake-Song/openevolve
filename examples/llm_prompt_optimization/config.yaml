@@ -11,9 +11,9 @@ language: "text"  # Explicitly set language to text for prompt evolution
 
 # LLM Configuration
 llm:
-  api_base: "https://generativelanguage.googleapis.com/v1beta/openai/"
+  api_base: "https://openrouter.ai/api/v1"
   models:
-    - name: "gemini-2.5-flash-lite"  # Using Gemini 2.5 Flash Lite
+    - name: "openai/gpt-4.1-mini"  # Using Gemini 2.5 Flash Lite
       weight: 1.0
   
   temperature: 0.4  # Optimal from experiments

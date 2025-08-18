@@ -1,5 +1,5 @@
 # HoVer (Fact Extraction and Claim Verification) dataset configuration
-dataset_name: "hover"  # Official HoVer dataset
+dataset_name: "Dzeniks/hover"  # Official HoVer dataset
 input_field: "claim"  # The claim to verify
 target_field: "label"  # 0=SUPPORTED, 1=NOT_SUPPORTED
 split: "validation"  # Using validation split for evaluation (test set is unlabeled)

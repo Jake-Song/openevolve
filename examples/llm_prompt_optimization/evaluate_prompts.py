@@ -125,17 +125,17 @@ def evaluate_hover(client, prompt_template, num_samples, model):
 
     # Try test split first (but it's unlabeled), then validation
     try:
-        test_dataset = load_dataset("hover", split="test", trust_remote_code=True)
+        test_dataset = load_dataset("Dzeniks/hover", split="test", trust_remote_code=False)
         # Check if test set has labels
         if test_dataset[0]["label"] != -1:
             dataset = test_dataset
             split_used = "test"
         else:
             # Test set is unlabeled, use validation
-            dataset = load_dataset("hover", split="validation", trust_remote_code=True)
+            dataset = load_dataset("Dzeniks/hover", split="validation", trust_remote_code=False)
             split_used = "validation"
     except:
-        dataset = load_dataset("hover", split="validation", trust_remote_code=True)
+        dataset = load_dataset("Dzeniks/hover", split="validation", trust_remote_code=False)
         split_used = "validation"
 
     # Determine samples to process
@@ -146,7 +146,7 @@ def evaluate_hover(client, prompt_template, num_samples, model):
     else:
         samples_to_process = min(num_samples, len(dataset))
         print(f"Using {samples_to_process} samples from {split_used} split")
-        dataset = load_dataset("hover", split=split_used, streaming=True, trust_remote_code=True)
+        dataset = load_dataset("Dzeniks/hover", split=split_used, streaming=True, trust_remote_code=False)
         dataset_iter = tqdm(
             dataset.take(samples_to_process), total=samples_to_process, desc="Evaluating"
         )
@@ -216,12 +216,12 @@ def evaluate_hotpotqa(client, prompt_template, num_samples, model):
     # Try test split first, then validation
     try:
         dataset = load_dataset(
-            "hotpotqa/hotpot_qa", "distractor", split="test", trust_remote_code=True
+            "hotpotqa/hotpot_qa", "distractor", split="test", trust_remote_code=False
         )
         split_used = "test"
     except:
         dataset = load_dataset(
-            "hotpotqa/hotpot_qa", "distractor", split="validation", trust_remote_code=True
+            "hotpotqa/hotpot_qa", "distractor", split="validation", trust_remote_code=False
         )
         split_used = "validation"
 
