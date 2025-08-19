@@ -1,0 +1,26 @@
+{
+  "prompt_type": "evolved",
+  "model": "qwen/qwen3-8b",
+  "samples_per_dataset": 100,
+  "timestamp": "2025-08-19T15:24:13.407449",
+  "results": [
+    {
+      "dataset": "hotpotqa",
+      "prompt_type": "evolved",
+      "accuracy": 0.87,
+      "baseline_accuracy": null,
+      "improvement_percent": 0,
+      "correct": 87,
+      "total": 100,
+      "empty_responses": 2,
+      "elapsed_time": 2064.3036935329437,
+      "timestamp": "2025-08-19T15:24:13.407256"
+    }
+  ],
+  "summary": {
+    "aggregate_accuracy": 0.87,
+    "total_correct": 87,
+    "total_samples": 100,
+    "datasets_evaluated": 1
+  }
+}

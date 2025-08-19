@@ -1,5 +1,5 @@
 # HotpotQA dataset configuration
-dataset_name: "hotpot_qa"  # Using the full dataset
+dataset_name: "hotpotqa/hotpot_qa"  # Using the full dataset
 dataset_config: "distractor"  # Using distractor setting with 10 paragraphs
 input_field: "question"  # The question to answer
 target_field: "answer"  # The correct answer
