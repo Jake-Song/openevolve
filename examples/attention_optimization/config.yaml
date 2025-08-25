@@ -5,11 +5,11 @@ log_level: "INFO"
 
 # LLM configuration
 llm:
-  primary_model: "openai/gpt-5-nano"
+  primary_model: "openai/gpt-5-mini"
   # primary_model: "gpt-4.1-nano"
   # primary_model: "o3"
   primary_model_weight: 0.8
-  secondary_model: "openai/gpt-5-mini"
+  secondary_model: "openai/gpt-5-nano"
   # secondary_model: "gpt-4.1-mini"
   secondary_model_weight: 0.2
   # api_base: "https://generativelanguage.googleapis.com/v1beta/openai/"

@@ -167,8 +167,15 @@ class MLIRAttentionEvaluator:
         pipeline = f"builtin.module({','.join(passes)})"
         print(f"Using pipeline: {pipeline}")
         
+        # Sanitize MLIR for compatibility with current mlir-opt syntax
+        # Fix known older syntax of tensor.expand_shape using 'output_shape [...]'
+        try:
+            sanitized_mlir = re.sub(r"\s*output_shape\s*\[[^\]]+\]\s*", " ", mlir_content)
+        except Exception:
+            sanitized_mlir = mlir_content
+
         with tempfile.NamedTemporaryFile(mode='w', suffix='.mlir', delete=False) as input_file:
-            input_file.write(mlir_content)
+            input_file.write(sanitized_mlir)
             input_file.flush()
             
             try:
